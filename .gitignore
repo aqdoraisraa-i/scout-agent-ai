@@ -1,5 +1,11 @@
-venv/
+# Sensitive Data
 .env
+
+# Python junk
 __pycache__/
-*.pkl
-data/*.csv
+*.pyc
+venv/
+env/
+
+# Data and Models (optional, but keeps repo clean)
+models/scout_model.pkl
