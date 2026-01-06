@@ -84,6 +84,6 @@ This project successfully migrated from Cloud-based LLMs to a **Local LLM archit
 
 
 ## 📬 Contact & Portfolio
-Created by Aqdora Israa - .
-LinkedIn : Aqdora Israa
+Created by Aqdora Israa
+[Linkedin](https://www.linkedin.com/in/israa-aqdora) click on it
 *Built for the next generation of Data-Driven Directors of Football.*
