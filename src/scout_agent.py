@@ -1,45 +1,69 @@
 import os
 from dotenv import load_dotenv
-from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_ollama import ChatOllama
 from langchain_core.prompts import PromptTemplate
 
+# Chargement des variables d'environnement
 load_dotenv()
 
 def get_scout_report(player_name, technical_dossier):
-    # Initializing Gemini 2.0 Flash for high-speed technical analysis
-    llm = ChatGoogleGenerativeAI(
-        model="gemini-2.0-flash", 
-        google_api_key=os.getenv("GOOGLE_API_KEY"),
-        temperature=0.1 # Strictly factual focus
-    )
-    
-    template = """
-    ROLE: Chief Technical Scout & Data Analyst.
-    CONTEXT: Finalizing the 2024-2025 Season Evaluation for {player_name}.
-    TECHNICAL DATA: {technical_dossier}
-
-    Provide a high-density, professional scouting report. Avoid generic praise.
-
-    ### 📊 Performance Efficiency (24/25)
-    - Analyze the player's output relative to their minutes played.
-    - Evaluate their 'Efficiency Delta' (Actual vs. Expected output). 
-    - Note if their performance suggests sustainability or an overperformance streak.
-
-    ### 🛡️ Tactical DNA
-    - Identify their primary tactical function (e.g., Progressor, Destroyer, Inverted Threat).
-    - Analyze their defensive contribution vs. offensive risk using Tkl, Int, and PrgP.
-
-    ### ⚖️ 2026 Recruitment Verdict
-    - **Verdict:** [IMMEDIATE SIGN / SCOUT FURTHER / DISREGARD]
-    - **Reasoning:** Use specific metrics from the 24/25 season to justify the 2026 decision.
-    - **System Fit:** Recommend the specific tactical setup that maximizes this data profile.
     """
-    
-    prompt = PromptTemplate(input_variables=["player_name", "technical_dossier"], template=template)
-    chain = prompt | llm
-    
+    Génère un rapport de scouting ultra-précis en utilisant Llama 3.2 en local.
+    Configuration optimisée pour la précision mathématique et l'analyse de données.
+    """
     try:
-        response = chain.invoke({"player_name": player_name, "technical_dossier": technical_dossier})
+        # Initialisation du modèle Llama 3.2 local
+        llm = ChatOllama(
+            model="llama3.2",
+            temperature=0.0,
+        )
+        
+        # Template haute densité avec règles de calcul strictes
+        template = """
+        ROLE: Senior Technical Scout & Data Scientist.
+        OBJECTIVE: Clinical Audit of {player_name} for the 24/25 Season.
+        RAW DATA INPUT: {technical_dossier}
+
+        Your report must be the perfect blend of QUANTITATIVE MATH and QUALITATIVE TACTICS.
+
+        ---
+
+        ### 🏟️ TECHNICAL AUDIT: {player_name} 🏟️
+
+        #### 📈 THE NUMBERS (QUANTITATIVE PILLAR)
+        * **Efficiency Delta:** Calculate the difference between Goals and xG. Analyze if the player is over-performing (clinical skill) or under-performing (confidence/luck issues).
+        * **Output Density:** Analyze Goals/Assists per 90 minutes based on the total minutes played.
+        * **Progression Value:** Interpret Progressive Passes (PrgP) and Carries (PrgC). Is this player a "Verticality Engine" or a "Safety Passer"?
+
+        #### 🧠 THE SCOUT'S EYE (QUALITATIVE PILLAR)
+        * **Tactical Archetype:** Define their role (e.g., "False 9", "Space Interpreter", "Box-to-Box Engine") based on the statistical distribution.
+        * **Defensive Work-Rate:** Interpret Tackles (Tkl) and Interceptions (Int). Is the player a "Pressing Trigger" or a "Positional Defender"?
+        * **System Compatibility:** Which tactical setup (4-3-3 High Press, 3-4-3 Transition, etc.) maximizes this player's ROI?
+
+        #### ⚖️ 2026 RECRUITMENT VERDICT
+        * **Recommendation Score:** [X/10]
+        * **Investment Risk:** [Low / Medium / High] - Justify based on data stability.
+        * **Final Decision:** 🔥 **STRATEGIC SIGNING** / 📝 **MONITOR PROGRESS** / ❌ **PASS**.
+
+        ---
+        *Format: Use Markdown, bold headers, and professional scouting terminology.*
+        """
+        # Préparation du prompt
+        prompt = PromptTemplate(
+            input_variables=["player_name", "technical_dossier"], 
+            template=template
+        )
+        
+        # Création de la chaîne de traitement
+        chain = prompt | llm
+        
+        # Exécution de l'analyse
+        response = chain.invoke({
+            "player_name": player_name, 
+            "technical_dossier": technical_dossier
+        })
+        
         return response.content
+
     except Exception as e:
-        return f"⚠️ Analysis Engine Error: {str(e)}"
+        return f"⚠️ Erreur Agent Local: {str(e)}. Assurez-vous qu'Ollama est lancé."
