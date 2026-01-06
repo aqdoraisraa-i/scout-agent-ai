@@ -1,7 +1,7 @@
 # ⚽ Scout-Agent AI: 2024-2025 Elite Technical Auditor
 Developped by : Aqdora Israa
 
-**Scout-Agent AI** is a professional-grade football scouting platform designed for the 2026 recruitment window. By combining **Machine Learning** (Tactical Similarity) with a **Local AI Agent (LLM)**, it transforms raw 24/25 season stats into clinical, high-impact scouting dossiers.
+### **Scout-Agent AI** is a professional-grade football scouting platform designed for the 2026 recruitment window. By combining **Machine Learning** (Tactical Similarity) with a **Local AI Agent (LLM)**, it transforms raw 24/25 season stats into clinical, high-impact scouting dossiers.
 ---
 
 ## 🌟 Elite Features
@@ -61,9 +61,8 @@ streamlit run app.py
 
 ## 📊 Strategic Comparison Dashboard example
 
-![Haaland vs Mbappe Comparison](assets/comparison_haaland_mbappe.png)
+![Haaland vs Mbappe Comparison](assets/comparison_haaland_mbappe.png.png)
 *Figure 1: Side-by-side radar chart comparison and statistical similarity scoring between elite profiles.*
->>>>>>> 9f33e68 (feat: migrate to local Llama 3.2 via Ollama & update tactical README)
 
 
 ---
