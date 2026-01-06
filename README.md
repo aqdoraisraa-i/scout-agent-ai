@@ -1,49 +1,90 @@
-# ⚽ Scout-Agent AI: Technical Director Assistant
+# ⚽ Scout-Agent AI: Advanced Football Recruitment Intelligence
 
-**Autonomous Football Scouting Agent** | Built with XGBoost & LangChain | Predictive Analytics + GenAI Technical Director
+**Scout-Agent AI** is a professional-grade technical scouting platform designed for the 2026 Winter Transfer Window. By integrating **Generative AI (Gemini 2.0 Flash)** with **Advanced Data Science**, it transforms raw FBref performance data from the 2024-2025 season into actionable recruitment dossiers.
 
 ---
 
-## 🌟 Project Overview
-Scout-Agent AI is a data-driven intelligence tool designed for modern football recruitment. It bridges the gap between raw performance data and actionable scouting insights by combining **Predictive Machine Learning** with **Generative AI**.
+## 🚀 Core Functionalities
 
-### 🔄 The Hybrid Workflow
-1.  **Predictive Brain (XGBoost)**: Analyzes historical player workloads (minutes, starts) to predict future $xG$ (Expected Goals) output.
-2.  **Strategic Voice (Gemini 2.5)**: A LangChain-powered agent acts as a "Technical Director," transforming stats into professional scouting reports with tactical fit and "Sign/Pass" recommendations.
+### 1. AI-Driven Performance Audits
+The platform doesn't just show numbers; it interprets them. The AI Agent analyzes:
+* **Efficiency Delta:** Comparing actual goals and assists against xG and xAG to identify clinical finishers vs. lucky streaks.
+* **Tactical Sustainability:** Evaluating if a player's physical workload (minutes/starts) is sustainable for a top-tier club.
 
-## 🛠️ Tech Stack (2026 Standard)
-* **Machine Learning**: XGBoost (Regression Modeling)
-* **AI Orchestration**: LangChain + Google Gemini 2.5 Flash
-* **Frontend**: Streamlit (Reactive Web Dashboard)
-* **Data Science**: Pandas, Scikit-learn, Joblib
-* **Environment**: Dotenv (Secure API Management)
+### 2. Tactical Similarity Engine (Statistical Twin Finder)
+Leveraging **Cosine Similarity** algorithms, the dashboard calculates a "Tactical Match Score." 
+* **Use Case:** If your primary target is unavailable, the engine identifies players with the most similar statistical "fingerprint" across progressive passing, carries, and defensive volume.
 
-## 🚀 Installation & Setup
+### 3. Multidimensional Radar Profiles
+Interactive visualizations that normalize player performance against league maximums. 
+* **Metrics:** xG, xAG, Progressive Carries, Progressive Passes, and Defensive Actions (Tkl+Int).
 
-1. **Clone the Repo**
-```bash
-   git clone [https://github.com/aqdoraisraa-i/scout-agent-ai.git](https://github.com/aqdoraisraa-i/scout-agent-ai.git)
-   cd scout-agent-ai
-  ``` 
-2. **Initialize Environment**
-  ```bash
-  python -m venv venv
-  source venv/Scripts/activate  # Windows: .\venv\Scripts\activate
-  pip install -r requirements.txt
-  ```
-3. **Secure Your Keys Create a .env file in the root (this is ignored by Git for security)**
- ```bash
- GOOGLE_API_KEY=your_gemini_api_key_here
- ```
- 4. **Run the app**
-  ```bash
-  python src/train.py   # Train the XGBoost predictive model
-streamlit run app.py  # Launch the scouting dashboard
-  ```
 
-## 📊 Key Features
-- Predictive Filtering: Find players based on predicted performance metrics.
-- Deep Tactical Reports: AI-generated analysis of playing style, strengths, and weaknesses.
-- Exportable Insights: Download professional reports as .txt files for your scouting archive.
 
-Developed by aqdoraisraa-i — Empowering football recruitment with Hybrid AI.
+---
+
+## 📂 Data & Methodology
+
+### Timeframe: The 2024-2025 "Golden Season"
+The data used represents the **full, completed 2024-2025 campaign** across the European "Big 5" leagues:
+* 🏴󠁧󠁢󠁥󠁮󠁧󠁿 **Premier League**
+* 🇪🇸 **La Liga**
+* 🇮🇹 **Serie A**
+* 🇩🇪 **Bundesliga**
+* 🇫🇷 **Ligue 1**
+
+### The Tech Stack
+* **LLM:** Google Gemini 2.0 Flash (via LangChain).
+* **Similarity Logic:** Scikit-Learn `cosine_similarity`.
+* **Frontend:** Streamlit.
+* **Data Processing:** Pandas & NumPy.
+* **Visualization:** Plotly Linear Polar Charts.
+
+---
+
+## 🛠️ Installation & Setup
+
+### Prerequisites
+* Python 3.9+
+* Google AI Studio API Key (Gemini API)
+
+### Step-by-Step
+1.  **Clone the Repository**
+    ```bash
+    git clone [https://github.com/yourusername/scout-agent-ai.git](https://github.com/yourusername/scout-agent-ai.git)
+    cd scout-agent-ai
+    ```
+2.  **Install Requirements**
+    ```bash
+    pip install -r requirements.txt
+    ```
+3.  **Environment Variables**
+    Create a `.env` file in the root directory:
+    ```env
+    GOOGLE_API_KEY=your_api_key_here
+    ```
+4.  **Run the Application**
+    ```bash
+    streamlit run app.py
+    ```
+
+---
+
+## 🔍 Discovery Interface
+The sidebar allows for deep-dive scouting using three main vectors:
+1.  **League Filter:** Focus on specific tactical environments (e.g., the physicality of the Premier League).
+2.  **Position Filter:** Narrow down to `FW`, `MF`, `DF`, or `GK`.
+3.  **Age/Availability Slider:** Filter by player age and total minutes played to ensure target reliability.
+
+
+
+---
+
+## ⚖️ Disclaimer & Usage
+This tool is built for recruitment analysts and technical directors. The "Verdict" generated by the AI is based on 2024-2025 performance data and should be used as a secondary confirmation tool alongside traditional video scouting.
+
+---
+
+## 📬 Contact & Portfolio
+Created by Aqdora Israa - Professional Data Analyst & Football Enthusiast.
+LinkedIn : Aqdora Israa
